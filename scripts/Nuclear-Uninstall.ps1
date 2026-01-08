@@ -125,7 +125,7 @@ $foldersToNuke = @(
     "$env:LOCALAPPDATA\Nova Star",
     "$env:LOCALAPPDATA\SmartLCT",
     "$env:LOCALAPPDATA\NovaLCT",
-    "C:\Users\david\usb_driver"  # Zadig leftover
+    "$env:USERPROFILE\usb_driver"  # Zadig leftover
 )
 
 foreach ($folder in $foldersToNuke) {
