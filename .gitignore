@@ -1,0 +1,21 @@
+# Backup folders (user-specific, created during fix)
+*_Backup/
+MarsServerProvider_Backup/
+VCan_MarsServerProvider_Backup/
+
+# Claude Code
+.claude/
+
+# Temp files
+*.log
+*.tmp
+
+# Windows
+Thumbs.db
+Desktop.ini
+nul
+
+# Editors
+.vscode/
+*.swp
+*~
