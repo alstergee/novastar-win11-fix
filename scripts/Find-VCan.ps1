@@ -26,7 +26,8 @@ foreach ($basePath in $programPaths) {
 
 # Also search desktop for installers
 Write-Host "`nSearching Desktop for installers..." -ForegroundColor Yellow
-Get-ChildItem "C:\Users\david\Desktop" -File -ErrorAction SilentlyContinue | Where-Object {
+$desktop = [Environment]::GetFolderPath("Desktop")
+Get-ChildItem $desktop -File -ErrorAction SilentlyContinue | Where-Object {
     $_.Name -match "vcan|v-can|nova"
 } | ForEach-Object {
     Write-Host "  Found: $($_.FullName)" -ForegroundColor Cyan

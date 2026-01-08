@@ -3,9 +3,10 @@ param(
     [switch]$Restore  # Use this to restore from backup
 )
 
-$novaLctMars = "C:\Users\david\AppData\Roaming\Nova Star\NovaLCT\Bin\MarsServerProvider"
+$novaLctMars = Join-Path $env:APPDATA "Nova Star\NovaLCT\Bin\MarsServerProvider"
 $smartLctMars = "C:\Program Files (x86)\Nova Star\SmartLCT\Bin\MarsServerProvider"
-$backup = "C:\Users\david\Desktop\SmartLCT_Mars_Backup"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$backup = Join-Path (Split-Path -Parent $scriptDir) "MarsServerProvider_Backup"
 
 # Kill processes first
 Write-Host "Killing processes..." -ForegroundColor Yellow

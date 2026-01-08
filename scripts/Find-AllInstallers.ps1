@@ -1,9 +1,9 @@
 # Search for Nova installers in common locations
 $searchPaths = @(
-    "C:\Users\david\Desktop",
-    "C:\Users\david\Downloads",
-    "C:\Users\david\Documents",
-    "C:\Users\david"
+    [Environment]::GetFolderPath("Desktop"),
+    [Environment]::GetFolderPath("UserProfile") + "\Downloads",
+    [Environment]::GetFolderPath("MyDocuments"),
+    [Environment]::GetFolderPath("UserProfile")
 )
 
 Write-Host "=== Searching for Nova Installers ===" -ForegroundColor Cyan

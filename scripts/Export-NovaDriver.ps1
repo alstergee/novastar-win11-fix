@@ -1,5 +1,6 @@
 # Export the Nova ProHD driver files
-$exportDir = "C:\Users\david\Desktop\Alex\Driver_NovaProHD"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$exportDir = Join-Path (Split-Path -Parent $scriptDir) "Driver_NovaProHD"
 
 # Find the device
 $device = Get-PnpDevice | Where-Object {
@@ -23,7 +24,7 @@ New-Item -ItemType Directory -Path $exportDir -Force | Out-Null
 
 # Find all INF files that match libusb/Nova
 $infDir = "C:\Windows\INF"
-$tempExport = "C:\Users\david\Desktop\Alex\temp_driver_export"
+$tempExport = Join-Path $env:TEMP "nova_driver_export"
 New-Item -ItemType Directory -Path $tempExport -Force | Out-Null
 
 # Export from pnputil
